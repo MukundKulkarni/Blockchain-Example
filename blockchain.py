@@ -1,6 +1,9 @@
 import hashlib
 import json
 from time import time
+from uuid import uuid4
+
+from flask import Flask
 
 #We will create a blockchain class whose constructor creates an initial empty list
 #(to store our blockchain) and another to store transactions.
@@ -54,3 +57,26 @@ class Blockchin(object):
     @property
     def last_block(self):
         return self.chain[-1]
+
+
+    def proof_of_work(self, last_proof):
+        """
+        Simple Proof of work algorithm:
+        - find p' such that hash(pp') contains leading 4 zeros, where p in previous p'
+        - p is the previous proof and p' is the new proof
+        """
+        proof = 0
+        while self.valid_proof(last_proof, proof) is False:
+            proof += 1
+
+        return proof
+
+
+    def valid_proof(last_proof, proof):
+        # Validated does hash(last_proof, proof) contains leading 4 zeros
+
+        guess = f'{last_proof}{proof}'.encode()
+
+        guess_hash = hashlib.sha256(guess).hexdigest()
+
+        return guess_hash[:4] == "0000"
