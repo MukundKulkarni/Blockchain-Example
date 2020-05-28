@@ -7,7 +7,7 @@ A blockchain is an immutable, sequential chain of records called Blocks. They ca
 Each Block has an index, a timestamp (in Unix time), a list of transactions, a proof, and the hash of the previous Block.<br>
 Here's an Example of a block
 
-```
+```python
 block = {
     'index': 1,
     'timestamp': 1506057125.900785,
