@@ -22,3 +22,15 @@ block = {
     'previous_hash': "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 }
 ```
+# Understanding Proof of Work
+
+The Proof of Work algorithm (PoW) is how new blocks are created or mined from the blockchain.<br>
+The goal of PoW is to discover a number which solves a problem. The number must be difficult to<br>
+find but easy to verify—computationally speaking—by anyone on the network.<br>
+
+In Bitcoin the Proof of Work algorithm used is called __HASHCASH__.<br>
+It’s the algorithm that miners race to solve in order to create a new block. In general, <br>
+the difficulty is determined by the number of characters searched for in a string.<br>
+ The miners are then rewarded for their solution by receiving a coin—in a transaction.<br>
+
+ The network is able to easily verify their solution.
