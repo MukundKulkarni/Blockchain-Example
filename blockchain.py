@@ -72,7 +72,7 @@ class Blockchain(object):
         return proof
 
 
-    def valid_proof(last_proof, proof):
+    def valid_proof(self,last_proof, proof):
         # Validated does hash(last_proof, proof) contains leading 4 zeros
 
         guess = f'{last_proof}{proof}'.encode()
