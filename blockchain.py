@@ -3,11 +3,11 @@ import json
 from time import time
 from uuid import uuid4
 
-from flask import Flask
+
 
 #We will create a blockchain class whose constructor creates an initial empty list
 #(to store our blockchain) and another to store transactions.
-class Blockchin(object):
+class Blockchain(object):
 
     def __init__(self):
         self.chain = []
