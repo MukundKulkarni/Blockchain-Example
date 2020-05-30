@@ -33,4 +33,33 @@ It’s the algorithm that miners race to solve in order to create a new block. I
 the difficulty is determined by the number of characters searched for in a string.
  The miners are then rewarded for their solution by receiving a coin—in a transaction.<br>
 
- The network is able to easily verify their solution.
+ The network is able to easily verify their solution.<br>
+ 
+ # Usage
+
+ #### Run application
+
+ ```
+ $ python app.py
+ ```
+
+ #### Mine a new Block
+
+ ```
+ $ curl http://127.0.0.1:5000/mine
+ ```
+
+ #### Add a new Transaction
+ ```
+ curl -X POST -H "Content-Type: application/json" -d '{
+  "sender": "d4ee26eee15148ee92c6cd394edd974e",
+  "recipient": "someone-other-address",
+  "amount": 5
+ }' "http://localhost:5000/transactions/new"
+ ```
+
+ #### Check Chain
+
+ ```
+ $ curl http://127.0.0.1:5000/chain
+ ```
